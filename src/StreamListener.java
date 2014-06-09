@@ -15,7 +15,7 @@ import twitter4j.StatusListener;
 // Implement StatusListener to retrieve tweets from the Streaming API
 
 public class StreamListener implements StatusListener {
-	public final static int MAX_TWEETS_ACCUM= 100; // Max number of tweets accumulated before saving	
+	public final static int MAX_TWEETS_ACCUM= 500; // Max number of tweets accumulated before saving	
 	private List<Status> tweetAccum; // Accumulates Tweets
 
 	private MongoConnection mongoConnection;

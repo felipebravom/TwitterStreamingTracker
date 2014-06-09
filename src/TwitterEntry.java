@@ -48,10 +48,31 @@ public class TwitterEntry {
 		
 				
 		dbTweet.put("tweetId", this.status.getId());
-		dbTweet.put("userId", this.status.getUser().getId());
-		dbTweet.put("userName", this.status.getUser().getName());
+		
+
+		
+		
 		dbTweet.put("text", this.status.getText());
 		dbTweet.put("date", this.status.getCreatedAt());
+		dbTweet.put("isRetweet", this.status.isRetweet());
+		dbTweet.put("isRetweeted",this.status.isRetweeted());		
+		dbTweet.put("retweetCount",this.status.getRetweetCount());
+		
+		if(this.status.isRetweet())
+			dbTweet.put("retweetedStatusId", this.status.getRetweetedStatus().getId());
+		
+		dbTweet.put("inReplyToStatusId",this.status.getInReplyToStatusId());
+		dbTweet.put("inReplyToUserId",this.status.getInReplyToUserId());
+		dbTweet.put("favoriteCount",this.status.getFavoriteCount());
+		
+		dbTweet.put("lang", this.status.getLang());
+		
+		
+		dbTweet.put("userId", this.status.getUser().getId());
+		dbTweet.put("userName", this.status.getUser().getName());		
+		dbTweet.put("userLang",this.status.getUser().getLang());		
+		dbTweet.put("userFollowersCount", this.status.getUser().getFollowersCount());
+		
 
 
 
